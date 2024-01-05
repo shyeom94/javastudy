@@ -6,17 +6,27 @@ public class MainClass {
     
     // 월에 따른 계절 출력하기
     int month = 12;
+    String season;
     
     if(month > 2 && month < 6) {             // 3 4 5
-      System.out.println("봄");
+      season = "봄";
     } else if(month > 5 && month < 9) {      // 6 7 8
-      System.out.println("여름");
+      season = "여름";
     } else if(month > 8 && month < 12){      // 9 10 11    
-      System.out.println("가을");
+      season = "가을";
     } else {                                 // 12 1 2 
-      System.out.println("겨울");
+      season = "겨울";
     } 
-        
+    
+    System.out.println(season);
+    
+    int mod = month % 12; 
+    // 나머지 
+    // 0  1  2  겨울
+    // 3  4  5  봄
+    // 6  7  8  여름
+    // 9  10 11 가을
+    
   }
   
   public static void method2() {
@@ -35,6 +45,25 @@ public class MainClass {
     } else {
       System.out.println("불합격");
     }
+    
+    // ===================================================
+    
+    // 합격 점수 
+    int pass = 0;
+    if(grade >= 1 && grade <=3) {
+      pass = 60;
+    } else if(grade >= 4 && grade <= 6) {
+      pass = 70;
+    }
+    
+    // 합격 / 불합격 
+    String result = null;
+    if (score >= pass) {
+      result = "합격";
+    } else {
+      result = "불합격";
+    }
+    
   }
   
   public static void method3() {
@@ -42,24 +71,32 @@ public class MainClass {
     // 4일은 목요일, n 일 후는 무슨 요일?
     
     int day = 4;      // 4일은 목요일
-    int nDay = 10;    // nDay일 후
+    int nDay = 0;    // nDay일 후
     String weekName;  // 요일 (월~일)
     
+    // day 의 nDay 일 후
+    day += nDay;
+    
+    // day 를 7로 나눈 나머지
+    int mod = day % 7;
+    
     if ((day + nDay) % 7 == 1) {
-      System.out.println("금");
+      weekName = "월";
     } else if ((day + nDay) % 7 == 2) {
-      System.out.println("토");
+      weekName = "화";
     } else if ((day + nDay) % 7 == 3) {
-      System.out.println("일");
+      weekName = "수";
     } else if ((day + nDay) % 7 == 4) {
-      System.out.println("월");
+      weekName = "목";
     } else if ((day + nDay) % 7 == 5) {
-      System.out.println("화");
+      weekName = "금";
     } else if ((day + nDay) % 7 == 6) {
-      System.out.println("수");
+      weekName = "토";
     } else {
-      System.out.println("목");
+      weekName = "일";
     }
+    
+    System.out.println(weekName);
     
   }
   
