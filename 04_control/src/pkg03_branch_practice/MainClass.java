@@ -100,10 +100,44 @@ public class MainClass {
     
   }
   
+  public static void method4() {
+    
+    // 문자열 비교 
+    
+    // 메뉴에 따른 가격 저장하기 
+    
+    // 아메리카노 : 1000원
+    // 카페라떼   : 2000원
+    // 밀크티     : 3000원
+    // 기타       : 5000원
+    
+    String order = "카페라떼";
+    int price = 0;
+    
+    switch (order) { 
+    case "아메리카노" : 
+      price = 1000;
+      break;
+    case "카페라떼" : 
+      price = 2000;
+      break;
+    case "밀크티" : 
+      price = 3000;
+      break;
+    default: 
+      price = 5000;
+      break;
+    }
+    
+    System.out.println(order + " 주문받았습니다. 가격은 " + price + "원 입니다.");
+    
+  }
+  
   public static void main(String[] args) {
-    method1();
-    method2();
-    method3();
+    //method1();
+    //method2();
+    //method3();
+    method4();
   }
 }
 

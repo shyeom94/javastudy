@@ -28,7 +28,6 @@ public class Class01_If {
   
   public static void method2() {
 
-    
     /*
      * else if
      * 1. if 이후에 추가 가능한 선택 구문이다.
