@@ -22,7 +22,7 @@ public class MainClass {
     
     int mod = month % 12; 
     // 나머지 
-    // 0  1  2  겨울
+    // 0  1  2  겨울 
     // 3  4  5  봄
     // 6  7  8  여름
     // 9  10 11 가을
