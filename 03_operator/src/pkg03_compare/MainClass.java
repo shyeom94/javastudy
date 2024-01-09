@@ -18,9 +18,7 @@ public class MainClass {
     System.out.println(a != b); // true or false
     
     // 문자열의 동등 비교는 사용을 금지한다. 
-    
-    
-    
+ 
   }
 }
 

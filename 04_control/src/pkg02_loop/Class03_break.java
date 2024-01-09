@@ -6,7 +6,6 @@ public class Class03_break {
 
     /*
      * break loop 문 종료할 때 쓰인다.
-     * 
      */
 
     // 무한 루프
@@ -17,22 +16,17 @@ public class Class03_break {
     // while 을 이용한 무한 루프
     n = 1;
     while (true) {
-
       if (n > 5)
         break;
-
       System.out.println(n++);
     }
 
     // for 를 이용한 무한 루프
     n = 1;
     for (;;) {
-
       if (n == 6)
         break;
-
       System.out.println(n++);
-
     }
 
   }

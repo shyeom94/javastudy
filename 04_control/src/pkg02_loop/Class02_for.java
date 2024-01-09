@@ -28,7 +28,6 @@ public class Class02_for {
       for (int hour = 1; hour <= 8; hour++) {
         System.out.println(day + "교시");
       }
-
     }
 
   }

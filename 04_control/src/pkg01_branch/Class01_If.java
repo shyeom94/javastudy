@@ -9,7 +9,6 @@ public class Class01_If {
      * 1. 조건식을 만족하는 경우에만 실행한다.
      * 2. 실행문은 중괄호 {}로 묶는다.
      * 3. 실행문이 하나인 경우 중괄호 {}는 생략할 수 있다. 
-     * 
      */
     
     int n = 42353;
@@ -33,7 +32,6 @@ public class Class01_If {
      * 1. if 이후에 추가 가능한 선택 구문이다.
      * 2. if 로 처리하지 못한 대상들에 새로운 조건식을 지정할 수 있다. 
      * 3. 원하는 만큼 계속 추가할 수 있다. 
-     * 
      */
     
     int age = 15; 
@@ -79,9 +77,9 @@ public class Class01_If {
   }
   
   public static void main(String[] args) {
+    //method1();
     //method2();
     method3();
-    
   }
 }
 

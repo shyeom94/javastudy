@@ -20,8 +20,6 @@ public class MainClass {
     String result = score >= 60 ? "합격" : score >= 50 ? "재시험" : "불합격";
     System.out.println(result);
     
-    
-    
   }
 }
 

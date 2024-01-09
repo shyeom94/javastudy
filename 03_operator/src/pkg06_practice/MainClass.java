@@ -12,7 +12,6 @@ public class MainClass {
     
     System.out.println(m);
     System.out.println(s);
-    
   }
   
   public static void method2() {
@@ -30,7 +29,6 @@ public class MainClass {
     
     System.out.println(x);  //  20
     System.out.println(y);  //  10
-    
   }
   
   public static void method3() {
@@ -56,9 +54,7 @@ public class MainClass {
     System.out.println(judge);
     
   }
-  
-  
-  
+
   public static void main(String[] args) {
 
     // method1();
@@ -68,3 +64,5 @@ public class MainClass {
     
   }
 }
+
+

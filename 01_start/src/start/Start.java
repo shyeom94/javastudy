@@ -4,6 +4,8 @@ public class Start {
   
   public static void main(String[] args) {
     
+    // 주석 comment
+    
     // single-line comment
     
     /*

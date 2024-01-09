@@ -21,7 +21,6 @@ public class MainClass {
      * 1. Pascal Case : 각 단어의 첫 글자는 대문자, 나머지는 소문자 (Class 이름) 
      * 2. Camel  Case : Pascal Case 와 동일하지만, 첫 글자는 소문자 (메소드, 변수)
      * 3. Snake  Case : 각 단어의 연결을 밑줄(_)로 하는 방식        (상수)
-     * 
      */
     
     /*
@@ -46,7 +45,6 @@ public class MainClass {
      *    2) 참조 자료형(타입) 
      *      (1) 값이 저장된 참조값을 저장하는 REFERENCE DATA 타입이다.
      *      (2) 기본 자료형을 제회한 모든 데이터는 참조 자료형이다.
-     * 
      */
     
     // 변수 선언 
@@ -99,7 +97,6 @@ public class MainClass {
      * 변수의 스코프 scope 
      * 1. 변수의 가용 범위를 의미한다.
      * 2. 변수가 선언된 코드 블록(중괄호, {}) 내에서만 사용할 수 있다.
-     * 
      */
     
     {
@@ -123,13 +120,10 @@ public class MainClass {
      *  1) final 키워드를 추가한다.
      *  2) 반드시 초기값을 지정한다.
      *  3) 관례상 대문자로 작성한다.
-     * 
      */
     
     final double PI = 3.141592;
     System.out.println(PI);
-    
-    
     
     /*
      * String  클래스
@@ -158,30 +152,6 @@ public class MainClass {
      * |             |
      * └-------------┘
      */
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     }
   }

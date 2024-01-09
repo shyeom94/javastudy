@@ -11,7 +11,6 @@ public class MainClass {
      *    1) && : 논리 AND, 두 항이 모두 true 이면 true, 나머지는 false 반환
      *    2) || : 논리  OR, 두 항 중 하나라도 true 이면 true 나머지 경우는 false 반환 
      *    3) !  : 논리 NOT, 전달된 항이 true 이면 false 반환 (반대 값을 반환) 
-     *    4)  
      */
     
     /*
@@ -74,6 +73,5 @@ public class MainClass {
     
   }
 }
-
 
 
