@@ -7,7 +7,7 @@ public class Calculator {
 
     if (number <= 0) {
       System.out.println(number + "는 제곱근을 계산할 수 없습니다.");
-      return; // 메소드 실행 중지 
+      return; // return 단독 : 메소드 실행 중지 
 
     } else {
       System.out.println(number + "의 제곱근은 " + Math.sqrt(number) + "입니다.");

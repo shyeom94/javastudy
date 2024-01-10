@@ -13,4 +13,13 @@ public class Calculator {
   
 }
 
+/*
+ * instance == 객체 (선언하면)
+ * (메모리 공간을 할당받으면)
+ * 
+ * object 
+ * 
+ * 객체 
+ * 
+ */
 

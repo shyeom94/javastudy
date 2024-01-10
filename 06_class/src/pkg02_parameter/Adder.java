@@ -9,8 +9,6 @@ public class Adder {
     }
     System.out.println("합 : " + total);
   }
-  
-  
 }
 
 

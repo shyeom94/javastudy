@@ -11,10 +11,10 @@ public class Calculator {
    */
   
   // 계산 결과를 저장한 필드
-  int value;
+  int value; 
   
   // +를 담당한 Adder 타입의 adder 필드
-  Adder adder = new Adder(); // new 선언해야 알아먹음
+  Adder adder = new Adder(); // new 선언해야 알아먹음 
   
   // 계산 결과를 출력하는 메소드
   void result() {
