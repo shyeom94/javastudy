@@ -41,7 +41,8 @@ public class BankAccount {
   ///////////////////////////////////////////////////
   
   // 입금
-  public void deposit(long money) {
+  public void deposit(long money) { 
+    // void 를 왜 썼지? deposit 이 별도의 리턴값을 요구하지 않으므로
     if(money <= 0) {
       System.out.println(money + "원 입금 불가");
       return;
@@ -73,6 +74,8 @@ public class BankAccount {
     // 내 통장에서 출금 
     // long a = withdrawal(money);
     // long b = this.withdrawal(money); 
+    
+    
     
     // 상대방 통장에 입금
     // account.deposit(a);

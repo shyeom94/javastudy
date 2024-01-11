@@ -10,15 +10,11 @@ public class MainClass {
     computer.showThis();
     // 같은 값이 나온다. 
     
-    
     System.out.println(computer.model);
     computer.showModel();
     // 같은 값이 나온다. 
     
-    
-    
   }
-
 }
 
 

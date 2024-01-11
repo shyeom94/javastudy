@@ -22,7 +22,7 @@ package pkg10_static;
 
 public class Calculator {
   // 상수 : final - 값을 보호할 필요가 없다. final 처리
-  public final static String maker = "samsung";
+  public final static String maker = "samsung"; 
 
   // 클래스 메소드
   public static void add(int a, int b) {
