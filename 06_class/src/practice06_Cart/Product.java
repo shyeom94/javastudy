@@ -3,8 +3,8 @@ package practice06_Cart;
 public class Product {
   
   // field 
-  private String name;
-  private int price;
+  private String name;    // 상품 이름 
+  private int price;      // 상품 가격 
   
   // constructor
   public Product() {

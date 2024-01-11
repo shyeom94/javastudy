@@ -19,10 +19,10 @@ public class MainClass {
     Contact contact = new Contact("02", "010");
     
     // 1. 디폴트 형식의 생성자 + setter
-    Member member = new Member();
-    member.setId("yeom");
-    member.setContact(contact);
-    member.setAddress(address);
+    Member member = new Member();   
+    member.setId("yeom");           
+    member.setContact(contact);   
+    member.setAddress(address);     
     
 //=================================================================================    
         

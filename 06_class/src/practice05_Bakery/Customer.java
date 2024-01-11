@@ -44,7 +44,8 @@ public class Customer {
     }
 
     // 구매 (곧 Bakery 의 판매를 의미한다.)
-    // BreadChange breadChange = bakery.sell(money, count); // null 발생 가능 NullPointException 발생 가능성 
+    // BreadChange breadChange = bakery.sell(money, count); // null 발생 가능
+    // NullPointException 발생 가능성
     // 개선
     BreadChange breadChange = null;
     if (bakery != null) {

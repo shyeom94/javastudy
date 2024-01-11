@@ -6,6 +6,8 @@ public class Contact {
   private String tel;
   private String mobile;
 
+//=======================================================  
+  
   // 필드값의 초기화를 안하는 생성자
   public Contact() {
 
@@ -18,6 +20,8 @@ public class Contact {
     this.mobile = mobile;
   }
 
+//=======================================================  
+    
   // getter / setter
   public String getTel() {
     return tel;

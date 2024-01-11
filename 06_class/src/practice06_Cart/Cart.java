@@ -3,9 +3,9 @@ package practice06_Cart;
 public class Cart {
 
   // field
-  public final static int CART_SIZE = 10; // 카트에 담을 수 있는 물건의 최대 수
-  private Product[] products; // 카트에 담은 물건들
-  private int count; // 카트에 담은 물건의 수
+  public final static int CART_SIZE = 10;  // 카트에 담을 수 있는 물건의 최대 수
+  private Product[] products;              // 카트에 담은 물건들
+  private int count;                       // 카트에 담은 물건의 수
 
   // constructor
   public Cart(int cartSize) {

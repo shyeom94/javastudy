@@ -64,9 +64,7 @@ public class Bakery {
 
     // 반환
     return new BreadChange(count, money - (count * PRICE));
-    
-    
-    
+
   }
 
 }

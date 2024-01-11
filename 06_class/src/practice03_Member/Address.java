@@ -12,13 +12,13 @@ public class Address {
 
 //============================================================================================================================  
   
-  // constructor. 디폴트 형식의 아무일도 안하는 생성자.
+  // constructor 디폴트 형식의 아무일도 안하는 생성자
 
-  // 입력용 - constructor 생성자. 값을 전달해서 setter 와 역할이 같다.
-  public Address() {
+  // constructor 생성자. 값을 전달해서 setter 와 역할이 같다.
+  public Address() { // publuc 으로 선언하는 이유 : 외부에서 접근이 용히해야 하므로 
   }
 
-  // 필드값을 유지하는 생성자.
+  // 필드값을 유지하는 생성자
   public Address(String postCode, String readAddress, String jibunAddress, String detailAddress, String extraAddress,
       boolean isBasicAddress) {
     super();
@@ -32,7 +32,7 @@ public class Address {
 
 //============================================================================================================================  
     
-  // method getter / setter 입출력 용도
+  // method getter / setter 입출력 용도 - class 에서 기능을 수행한다. 
   public String getPostCode() {
     return postCode;
   }
