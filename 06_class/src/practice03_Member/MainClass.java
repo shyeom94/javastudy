@@ -37,6 +37,8 @@ public class MainClass {
     System.out.println("집전화         : " + member.getContact().getTel());
     System.out.println("휴대전화       : " + member.getContact().getMobile());
 
+    
+    
   }
 }
 
