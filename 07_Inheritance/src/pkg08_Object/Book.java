@@ -9,7 +9,7 @@ package pkg08_Object; // Object 대문자, 클래스라는 의미
  * 
  * 3. 주요 메소드 
  *    1) boolean equals(Object another) { } // 반환타입 true or false  -> Object 타입은 만능 타입 
- *    2) String toString() { } // 반환타입 String 
+ *    2) String toString() { }              // 반환타입 String         
  *    
  * 4. 역할 
  *    1) 모든 것(값, 객체)을 저장할 수 있는 만능 타입이다. 
@@ -20,22 +20,26 @@ package pkg08_Object; // Object 대문자, 클래스라는 의미
  * 
  */
 
-public class Book {
+public class Book extends Object { // extends Object 
   
   // field 
   private String isbn;
   private String title;
+  
+  //==============================================================================================//    
   
   // constructor
   public Book() {
   }
 
   public Book(String isbn, String title) {
-    super(); // Object() {} 생성자 호출, 생략할 수 있다. 
+    super(); // Object() { } 생성자 호출, 생략할 수 있다. 
     this.isbn = isbn;
     this.title = title;
   }
 
+  //==============================================================================================//    
+  
   // method
   public String getIsbn() {
     return isbn;
@@ -52,7 +56,10 @@ public class Book {
   public void setTitle(String title) {
     this.title = title;
   }
+  
+  //==============================================================================================//  
 
+  // 무시해도 된다. hashCode()
   @Override
   public int hashCode() {
     final int prime = 31;
@@ -62,6 +69,10 @@ public class Book {
     return result;
   }
 
+  //==============================================================================================//  
+  
+  // 자동생성 - Source -> Generate hashCode() and equals()...
+  
   @Override
   public boolean equals(Object obj) {
     if (this == obj)
@@ -84,12 +95,12 @@ public class Book {
     return true; // 최종 
   }
 
+  //==============================================================================================//  
+  
+  // 자동생성 - Source -> Generate toString()...
+  
   @Override
   public String toString() {
     return "Book [isbn=" + isbn + ", title=" + title + "]";
   }
-  
-  // 
-  
-  
 }
