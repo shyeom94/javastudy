@@ -5,8 +5,8 @@ public class Student {
   // field
   private int stuNo;
   private String name;
-  private Book[] books;
-  private int bookCount;
+  private Book[] books; 
+  private int bookCount; 
 
   //==============================================================================================//
   
