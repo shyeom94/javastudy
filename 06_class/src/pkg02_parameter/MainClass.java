@@ -10,7 +10,8 @@ public class MainClass {
   public static void main(String[] args) {
     
     // 객체 선언 및 생성 
-    Calculator calculator = new Calculator();
+    pkg02_parameter.Calculator calculator = new Calculator(); 
+    // 패키지 이름까지 호출하는 것이 원래, 하지만 생략할 수 있는 경우 - 같은 패키지에 있다면 생략 가능, 그리고 java.lang. 패키지 안에 저장된 클래스 
     
     // 메소드 호출
     calculator.method1(); // 주는 곳. 인수, 인자
