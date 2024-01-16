@@ -60,7 +60,7 @@ public class MainClass {
 
       System.out.println(e);
 
-      e.printStackTrace(); // => 사용하기 
+      e.printStackTrace(); // => 주로 사용하기 : 예외 추적 
 
     }
 
