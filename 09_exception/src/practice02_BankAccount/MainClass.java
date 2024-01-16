@@ -19,6 +19,8 @@ public class MainClass {
     
     ////////////////////////////////////////////////////////////////////////
 
+    // MainClass 에서 예외 처리를 한다. try-catch 사용
+    
     try {
 
       account1.deposit(100000); // 10만원 입금 (성공) 
@@ -37,7 +39,7 @@ public class MainClass {
 
     } catch (Exception e) {
       
-      System.out.println(e.getMessage());
+      System.out.println(e.getMessage()); // 각 예외처리 별 메시지 출력 
 
     }
     

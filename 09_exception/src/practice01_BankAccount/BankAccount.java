@@ -50,10 +50,10 @@ public class BankAccount {
     // void 를 왜 썼지? deposit 이 별도의 리턴값을 요구하지 않으므로
     
     // 예외처리 필요
-    
     try {
     
     if(money <= 0) {
+      
       throw new RuntimeException(money + "원 입금 불가");
       
     }
@@ -72,7 +72,6 @@ public class BankAccount {
   public long withdrawal(long money) { // 오류 나는 이유 : try - return 예외 발생
 
     // 예외처리 필요
-
     long retValue = 0L; // 예외가 발생했을 때는 초기값 0 반환,
 
     try {
@@ -104,7 +103,8 @@ public class BankAccount {
 
   // 이체 (송금)
   public void transfer(BankAccount account, long money) {
-    
+  // 예외처리 필요 -> 필요없음, deposit(), withdrawal() 에서 각각 처리하고 있으므로 
+
     // 내 통장에서 출금 먼저 -> 출금 금액 반환 -> 상대방 통장에 입금
     
     // 내 통장에서 출금 
@@ -113,8 +113,6 @@ public class BankAccount {
         
     // 상대방 통장에 입금
     // account.deposit(a);
-    
-    // 예외처리 필요 -> 필요없음, deposit, withdrawal 에서 각각 처리하고 있으므로
     
     account.deposit(withdrawal(money)); 
     

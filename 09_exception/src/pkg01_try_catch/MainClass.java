@@ -34,7 +34,7 @@ public class MainClass {
 
   public static void method3() {
 
-    String[] userInputs = { "10", "23435", "34.43", "23.564", "324413", "77244" };
+    String[] userInputs = { "10", "23435", "34.43", "23.564", "324413", "77244" }; // int number 안에 들어갈 수 없는 34.43 
 
     for (int i = 0; i < userInputs.length; i++) {
 
