@@ -76,7 +76,7 @@ public class MainClass {
 
     // 배열을 ArrayList로 바꾸기
     // int[] => 안된다. 
-    Integer[] arr = new Integer[] {10, 20, 30};
+    Integer[] arr = new Integer[] {10, 20, 30}; // 참조 타입 선언 
     
     // 배열을 ArrayList로 바꿔서 반환하는 Arrays 클래스의 asList 메소드 
     List<Integer> numbers = Arrays.asList(arr);
@@ -106,6 +106,7 @@ public class MainClass {
     String removeItem = seasons.remove(2);
     System.out.println(removeItem);
     
+    // 결과 확인 
     System.out.println(seasons);
    
   }

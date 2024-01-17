@@ -17,7 +17,7 @@ public class MainClass {
      * 2. 구성
      *    1) Key   : 데이터 식별자, HashSet 으로 구성되어 있다. (순서 없고, 중복 없다.)
      *    2) Value : 데이터 자체 
-     *    3) Entry : Key 와 Value 를 합쳐서 부르는 말이다.
+     *    3) Entry : Key 와 Value 를 합쳐서 부르는 말이다. 
      */
     
     // HashMap 선언        => 대부분 이렇게 사용한다. 
@@ -106,8 +106,6 @@ public class MainClass {
     // 확인
     System.out.println(map);
   }
-  
-  
   
   public static void main(String[] args) {
     
