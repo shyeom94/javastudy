@@ -1,6 +1,6 @@
 package pkg03_input;
 
-import javax.swing.JOptionPane;
+import javax.swing.JOptionPane; // 
 
 public class Class02_JOptionPane {
 

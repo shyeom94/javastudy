@@ -20,8 +20,8 @@ public class MainClass {
      *    3) Entry : Key 와 Value 를 합쳐서 부르는 말이다. 
      */
     
-    // HashMap 선언        => 대부분 이렇게 사용한다. 
-    Map<String, Object> book;
+    // HashMap 선언             
+    Map<String, Object> book; // <String, Object> 대부분 이렇게 만든다. 
     
     // HashMap 생성
     book = new HashMap<String, Object>();
@@ -74,8 +74,7 @@ public class MainClass {
   
   public static void method4() {
     
-    // Entry 전체를 Set 로 만들 수 있다.
-    
+    // Entry 전체를 Set 으로 만들 수 있다.
     Map<String, Object> map = Map.of("name", "김철수"
                                     , "age", 10
                                     , "isMarried", false);
