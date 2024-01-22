@@ -1,5 +1,7 @@
 package practice03_Employee;
 
+import java.util.Objects;
+
 public class Employee {
 
   // field
@@ -33,9 +35,26 @@ public class Employee {
     this.name = name;
   }
 
-  public void info() {
+  public void info() { // 사원 조회, 전체 조회
     System.out.println("사원번호 : " + empNo);
     System.out.println("사원명 : " + name);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(empNo); // 번호가 같으면 true
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj)
+      return true;
+    if (obj == null)
+      return false;
+    if (getClass() != obj.getClass())
+      return false;
+    Employee other = (Employee) obj;
+    return empNo == other.empNo;
   }
 
 }
