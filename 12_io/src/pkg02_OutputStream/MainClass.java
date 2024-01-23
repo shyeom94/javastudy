@@ -35,7 +35,7 @@ public class MainClass { // 로그 파일 남길때 -> 추가모드 사용한다
   
   /*
    * java.io.ObjectOutputStream
-   * 1. 객체를 출력하는 바이트 출력 스트리 
+   * 1. 객체를 출력하는 바이트 출력 스트림이다.
    * 2. 보조 스트림으로 메인 스트림과 함께 사용해야 한다. 
    * 3. 객체를 출력 스트림으로 전송하기 위해서는 직렬화 과정이 필요하다. 
    * 4. 직렬화 방법
@@ -44,7 +44,7 @@ public class MainClass { // 로그 파일 남길때 -> 추가모드 사용한다
    * 
    */
   
-  public static void method1() {
+  public static void method1() { // 파일 생성 
 
     // 무조건 생성 모드 : 기존에 파일이 있으면 지우고 다시 만든다.
 
@@ -157,7 +157,7 @@ public class MainClass { // 로그 파일 남길때 -> 추가모드 사용한다
     
   }
   
-  public static void method3() {
+  public static void method3() { // 버퍼 출력 스트림 
     
     File dir = new File("\\storage");
     if(!dir.exists()) {
@@ -196,7 +196,7 @@ public class MainClass { // 로그 파일 남길때 -> 추가모드 사용한다
     }
   }
   
-  public static void method4() {
+  public static void method4() { // 데이터 출력 스트림 
   
     File dir = new File("\\storage");
     
@@ -238,7 +238,7 @@ public class MainClass { // 로그 파일 남길때 -> 추가모드 사용한다
     }
   }
   
-  public static void method5() {
+  public static void method5() { // 객체 출력 스트림
     
     File dir = new File("\\storage");
     if(!dir.exists()) {
@@ -282,7 +282,7 @@ public class MainClass { // 로그 파일 남길때 -> 추가모드 사용한다
     //method4();
     method5();
 
-    // 속도 비교 
+    // 파일 출력 스트림 vs 버퍼 출력 스트림 속도 비교 
     //practice1();
     //practice2();
     
