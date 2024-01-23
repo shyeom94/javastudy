@@ -62,10 +62,6 @@ public class MainClass {
     String s3 = "십";
     int n4 = Integer.parseInt(s3); // 중요 !!!        
     System.out.println(n4);
-    
-    
-    
-    
-    
+ 
   }
 }

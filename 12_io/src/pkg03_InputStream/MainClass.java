@@ -1,4 +1,4 @@
-package pkg03_inputStream;
+package pkg03_InputStream;
 
 import java.io.BufferedInputStream;
 import java.io.File;
