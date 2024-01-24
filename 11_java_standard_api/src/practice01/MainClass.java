@@ -140,20 +140,18 @@ public class MainClass {
     
   }
   
-  public static void method5() {
-    
-    // 윷놀이
-    
-    String[] yuts = {"", "도", "개", "걸", "윷", "모"}; 
+  public static void method5() { // 윷놀이
+
     // 0번째 index 공백인 이유 -> 인덱스를 전진하는 값으로 사용 가능
-    
+    String[] yuts = { "", "도", "개", "걸", "윷", "모" };
+   
     StringBuilder builder = new StringBuilder();    
     int move = 0; // 첫 시도는 0회 째
     
     int totalMove = 0; // 총 이동 횟수
     
     do {
-      move = (int)(Math.random() * 5 + 1); // 일단 한번 던져보고,
+      move = (int)(Math.random() * 5 + 1); // 일단 처음 한번 무조건 던져보고,
       totalMove += move;
       
       builder.append(yuts[move]);
@@ -218,8 +216,6 @@ public class MainClass {
       int dice = (int) (Math.random() * 9); // 1부터 6개의 수 중 하나가 발생한다.
       System.out.println(i+1 + "번째 난수 " + dice);
     }
-    
-    
     
     // 실행예시)
     // 0 : #### 4

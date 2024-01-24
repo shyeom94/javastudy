@@ -77,11 +77,17 @@ public class MyFileUtils {
     // 파일 복사하기
     // 원본 파일 삭제 
     
-    // => 파일 이동  
+    // 복사하기  
+    fileCopy(src, dest); 
+    
+    // 원본 지우기
+    new File(src).delete();
 
   }
 
   public static void main(String[] args) {
     MyFileUtils.fileCopy("\\Program Files\\Java\\jdk-17\\LICENSE", "\\storage\\LICENSE");
+    
+    MyFileUtils.fileMove("\\storage\\LICENSE", "\\GDJ77\\LICENSE");
   }
 }

@@ -13,6 +13,7 @@ public class Lotto {
    * @return money   사용자가 입력한 로또 구매 비용에서 1000 미만 단위는 버리고 반환. ex) 5999 입력 시 5000 반환
    * @return 0       로또 구매 실패 시 반환
    */
+  
   public int buyLotto() throws RuntimeException {
     
     Scanner sc = new Scanner(System.in);

@@ -227,6 +227,8 @@ public class MainClass { // 로그 파일 남길때 -> 추가모드 사용한다
       out.writeBoolean(isAdult);
       out.writeChar(gender);
     
+      // => 순서에 맞게 읽을 수 있다. 
+      
       // 데이터 출력 스트림 닫기
       out.close();
       
@@ -298,7 +300,9 @@ public class MainClass { // 로그 파일 남길때 -> 추가모드 사용한다
     
     // FileOutputStream 으로 애국가 1절 파일로 보내기 : 시간 재기 
     
+    // 파일 위치 
     File dir = new File("\\storage");
+    
     if(!dir.exists()) {
       dir.mkdirs();
     }

@@ -42,7 +42,7 @@ public class Employee implements Serializable { // 객체를 바이트 배열로
 
   @Override
   public String toString() {
-    return "Employee [empNo=" + empNo + ", name=" + name + "]";
+    return "Employee [empNo=" + empNo + ", name=" + name + "]"; // 확인하는 코드 
   }
 
 }
