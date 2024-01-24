@@ -10,8 +10,6 @@ import java.io.IOException;
 public class MyFileUtils {
 
   /*
-   * 모 듈 화
-   * 
    * static 으로 모듈화 
    */
 
@@ -21,8 +19,8 @@ public class MyFileUtils {
     // src 로부터 읽은 데이터를 바이트 배열에 저장하고,
     // 바이트 배열에 있는 데이터를 파일 출력 스트림으로 보내는 방식
 
-    // FileInputStream 으로 읽어 들어온다.
-    // FileOutputStream 으로 보낸다.
+    // FileInputStream 으로 원본파일을 받아온다. 
+    // FileOutputStream 으로 복사본을 출력한다. 
 
     // 원본 File 객체
     File srcFile = new File(src);
@@ -51,22 +49,23 @@ public class MyFileUtils {
 
       while ((readByte = in.read(bytes)) != -1) {
 
-        // out.write(bytes); // 실패한다! 5바이트씩 옮겨가며 빈 곳이 발생한다. 
-        
-        // readByte 까지 읽어와라
-        out.write(bytes, 0, readByte);
+        // 5바이트씩 옮겨가며 빈 곳이 발생한다. 원래 파일보다 용량이 큰 파일로 복사된다. [실패한다!]
+        out.write(bytes);
+
+        // bytes 단위로 0 번째 index 부터 readByte 까지 읽어와라.
+        out.write(bytes, 0, readByte); 
       }
 
       // 버퍼 출력 스트림 닫기
       out.close();
       // 버퍼 입력 스트림 닫기
       in.close();
-      
-      // => 조립은 해체의 역순. 순서 파악하기 
-      
-    } catch (IOException e) { 
+
+      // => 조립은 해체의 역순. 순서 파악하기
+
+    } catch (IOException e) {
       e.printStackTrace();
-      }
+    }
 
   }
 
@@ -77,7 +76,7 @@ public class MyFileUtils {
     // 파일 복사하기
     // 원본 파일 삭제 
     
-    // 복사하기  
+    // 파일 복사하기  
     fileCopy(src, dest); 
     
     // 원본 지우기
@@ -86,8 +85,10 @@ public class MyFileUtils {
   }
 
   public static void main(String[] args) {
+    // 복사하기 
     MyFileUtils.fileCopy("\\Program Files\\Java\\jdk-17\\LICENSE", "\\storage\\LICENSE");
-    
+    // 이동하기 
     MyFileUtils.fileMove("\\storage\\LICENSE", "\\GDJ77\\LICENSE");
+    
   }
 }

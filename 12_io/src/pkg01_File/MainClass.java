@@ -66,7 +66,7 @@ public class MainClass {
       try {
         file.createNewFile(); // 예외처리 필요하다. - IOException
       } catch (Exception e) { // IOException 처리가 반드시 필요하다. (Checked Exception)
-        System.out.println();
+        e.printStackTrace();
       }
     }
   }
@@ -129,13 +129,13 @@ public class MainClass {
     //method3();
     
     //practice1();
-    practice2(new File("\\2024\\01\\22"));
+    practice2(new File("\\2024\\01\\22")); 
     
   }
 
   public static void practice1() {
     
-    // C:\2024\01\22 디렉터리 만들기 (현재 년도 \ 월 \ 일 디렉터리 만들기)
+    // C:\2024\01\22 디렉터리 만들기 (현재 년도 \ 월 \ 일 디렉터리 만들기) 
     
     LocalDate today = LocalDate.now();
     int year = today.getYear();
@@ -158,7 +158,6 @@ public class MainClass {
     }
     
     System.out.println(dir.getPath() + "디렉터리 생성이 완료되었습니다.");
-    
   }
   
   public static void practice2(File dir) {
@@ -171,7 +170,6 @@ public class MainClass {
     // \2024\01\22 삭제 -> \2024\01 삭제 -> \2024 삭제 
     
     // 파라미터 File dir 객체의 상위 디렉터리가 없으면 종료 
-    
     File parent = dir.getParentFile();
     if (parent == null) {
       return;

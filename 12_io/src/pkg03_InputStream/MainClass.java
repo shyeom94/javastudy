@@ -29,7 +29,7 @@ public class MainClass {
    */
   
   /*
-   * java.io.DataInputStream
+   * java.io.DataInputStream * 
    * 1. 자바 변수로 구성된 데이터를 읽는 바이트 입력 스트림이다.
    * 2. 보조 스트림이므로 메인 스트림과 함께 사용해야 한다.
    * 3. 타입 별로 전용 메소드가 존재한다. 

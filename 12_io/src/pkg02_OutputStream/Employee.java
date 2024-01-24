@@ -4,10 +4,7 @@ import java.io.Serializable;
 
 public class Employee implements Serializable { // 객체를 바이트 배열로 보내는 것 : 직렬화
 
-  /**
-   * 
-   */
-  private static final long serialVersionUID = 6211817612988084360L;
+  private static final long serialVersionUID = 6211817612988084360L; 
 
   // field
   private int empNo;

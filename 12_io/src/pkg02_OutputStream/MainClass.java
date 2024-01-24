@@ -30,7 +30,6 @@ public class MainClass { // 로그 파일 남길때 -> 추가모드 사용한다
    * 1. Java 변수 값을 출력하는 바이트 출력 스트림이다.
    * 2. 보조 스트림으로 메인 스트림과 함께 사용해야 한다. 
    * 3. 타입 별로 전용 메소드가 존재한다. 
-   * 
    */
   
   /*
@@ -41,7 +40,6 @@ public class MainClass { // 로그 파일 남길때 -> 추가모드 사용한다
    * 4. 직렬화 방법
    *    1) 직렬화할 클래스는 java.io.Serializable 인터페이스를 구현한다. (필수)
    *    2) long serialVersionUID 필드 값을 임의로 생성한다.
-   * 
    */
   
   public static void method1() { // 파일 생성 
