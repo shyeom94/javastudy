@@ -1,5 +1,6 @@
 package practice01;
 
+import java.security.SecureRandom;
 import java.time.LocalDate;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -8,9 +9,8 @@ import java.util.UUID;
 
 public class MainClass {
 
-  public static void method1() {
+  public static void method1() { // 파일명 만들기 
 
-    // 파일명 만들기
     // 형식 : 하이픈이 제거된 UUID + 밑줄 + 타임스탬프. 확장자
 
     String fileName = "apple.jpg";
@@ -73,9 +73,8 @@ public class MainClass {
     
   }
   
-  public static void method3() {
-    
-   // 각 나라별 수도 맞히기
+  public static void method3() { // 각 나라별 수도 퀴즈 
+
    Map<String, String> map = Map.of("프랑스"  , "파리"
                                   , "독일"    , "베를린"
                                   , "이탈리아", "로마"
@@ -114,9 +113,9 @@ public class MainClass {
     
   }
 
-  public static void method4() {
+  public static void method4() { // 통장에서 출금하기 
     
-    // 랜덤 금액을 balance 에서 차감, 차감 후 춤금 횟수 증가 
+    // 랜덤 금액을 balance 에서 차감, 차감 후에 출금 횟수 증가 
     // 5000원이 있는 통장(balance)에서 랜덤하게 출금하기
     
     int balance = 5000; // 잔고 금액
@@ -140,7 +139,7 @@ public class MainClass {
     
   }
   
-  public static void method5() { // 윷놀이
+  public static void method5() { // 윷놀이 
 
     // 0번째 index 공백인 이유 -> 인덱스를 전진하는 값으로 사용 가능
     String[] yuts = { "", "도", "개", "걸", "윷", "모" };
@@ -171,28 +170,38 @@ public class MainClass {
 
   }
   
-  public static void method6() {
+  public static void method6() { // 임의의 인증번호 만들기 
     
     // SecureRandom을 이용해 "대문자+소문자+숫자"로 구성된 임의의 인증번호 만들기
-    
-    
-    
     // 실행예시1)
     //   몇 자리의 인증번호를 생성할까요? >>> 4
     //   생성된 4자리 인증번호는 7W5e입니다.
-    
     // 실행예시2)
     //   몇 자리의 인증번호를 생성할까요? >>> 6
     //   생성된 6자리 인증번호는 Fa013b입니다.
     
+    Scanner sc = new Scanner(System.in);
+    System.out.println("몇자리의 인증번호를 생성할까요? >>> ");
+    int count = sc.nextInt(); // 입력받은 자리 수 
+    SecureRandom secureRandom = new SecureRandom();
+    StringBuilder sb = new StringBuilder();
+    for(int n = 0; n < count; n++) {
+      double randomNumber = secureRandom.nextDouble(); // 0.0 <= randomNumber < 1.0
+      // 정수 대문자 소문자 발생 확률 : 33% 33% 34%
+      if(randomNumber < 0.33) {
+        sb.append(secureRandom.nextInt(10));
+      } else if(randomNumber < 0.66) {
+        sb.append((char)secureRandom.nextInt(26) + 'A');
+      } else {
+        sb.append((char)secureRandom.nextInt(26)+ 'a');
+      }
+    }
+    String code = sb.toString();
+    System.out.println("생성된 " + count + "자리 인증번호는 " + code + "입니다.");
+    sc.close();
   }
   
-  public static void method7() {
-    
-    // UpDown 게임
-    
-    
-    
+  public static void method7() { // UpDown 게임 
     // 컴퓨터가 1 ~ 10000 사이의 난수를 발생시킨다.
     // 사용자는 해당 난수를 맞힌다.
     // 실행예시)
@@ -204,19 +213,30 @@ public class MainClass {
     // 입력 >>> 4500
     // 정답입니다. 총 5번만에 성공했습니다.
     
+    Scanner sc = new Scanner(System.in);
+    int goal = (int) (Math.random() * 10000) + 1; // 발생된 난수. 랜덤한 값
+    int input = 0; // 사용자가 입력한 값
+    int nth = 0; // 사용자가 입력한 횟수
+    do {
+      System.out.println("입력 >>> ");
+      input = sc.nextInt();
+      nth++;
+      if (goal == input) {
+        System.out.println("정답은 " + goal + "이었습니다. " + nth + "번만에 성공했습니다.");
+      } else if (goal > input) {
+        System.out.println("Up!");
+      } else {
+        System.out.println("Down");
+      }
+    } while (goal != input);
+    sc.close();
   }
   
-  public static void method8() {
+  public static void method8() { // 빈도수 그래프 
     
     // 0~9 사이 난수를 100개 발생시키고 발생한 난수들이 생성된 횟수(빈도수)를 그래프화 하여 출력하시오.
     
     // 주사위 던지기
-    
-    for (int i = 0; i < 100; i++) {
-      int dice = (int) (Math.random() * 9); // 1부터 6개의 수 중 하나가 발생한다.
-      System.out.println(i+1 + "번째 난수 " + dice);
-    }
-    
     // 실행예시)
     // 0 : #### 4
     // 1 : ############ 12
@@ -229,12 +249,34 @@ public class MainClass {
     // 8 : ####### 7
     // 9 : ########### 11
     
+    int[] numbers = new int[100]; // 100개 난수
+    int[] frequency = new int[10]; // 0~9까지 생성된 정수 빈도의 그래프 문자열을 배열로 저장 
+
+    // 100개의 0~9까지 랜덤한 빈도 발생 
+    for (int i = 0; i < numbers.length; i++) {
+      numbers[i] = (int) (Math.random() * 10);
+      frequency[numbers[i]]++;
+    }
+
+    // 
+    for (int i = 0; i < frequency.length; i++) {
+      StringBuilder sb = new StringBuilder();
+      // 
+      for (int n = 0; n < frequency[i]; n++) {
+        // append 로 # 횟수만큼 저장 
+        sb.append('#');
+      }
+      
+      String graph = sb.toString();
+      System.out.println(i + " : " + graph + " : " + frequency[i]);
+      
+    }
+
   }
   
-  public static void method9() {
+  public static void method9() { // 숫자 빙고판 섞기 
     
     // 5 x 5 숫자 빙고판 자동 생성
-    
     // 지시사항)
     //   1. 1 ~ 25 사이 정수를 2차원 배열 bingo 에 순차적으로 넣는다.
     //      1  2  3  4  5
@@ -258,27 +300,58 @@ public class MainClass {
     //  14 20 11 19  6
     //   8 17  5 12  7
     //  16 22 18 24 23
-    
+    //========================================================
+    // 빙고판 크기 선언 
+    final int SIZE = 5;
+    // 빙고판 생성 
+    int[][] bingo = new int[SIZE][SIZE];
+    // 순서대로 초기화. 1~25 까지 올바르게 숫자 넣기 
+    for (int i = 0; i < SIZE; i++) {
+      for(int j = 0; j < SIZE; j++) {
+        bingo[i][j] = (i * SIZE) + (j + 1);
+      }
+    }
+    //========================================================
+    // 순서대로 넣어진 빙고판 랜덤하게 섞기 
+    for(int i = 0; i < SIZE; i++) {
+      for(int j = 0; j < SIZE; j++) {
+        //bingo[i][j] 와 bingo[x][y] 서로 교환
+        //랜덤한 index x, y 생성
+        int x = (int) (Math.random() * SIZE);
+        int y = (int) (Math.random() * SIZE);
+        int temp; // 임시 값 저장. 교환을 위해.
+        
+        temp = bingo[i][j];
+        bingo[i][j] = bingo[x][y];
+        bingo[x][y] = temp;
+        
+      }
+    }
+    //========================================================
+    // 섞어진 빙고판 출력하기
+    for(int i = 0; i < SIZE; i++) {
+      for(int j = 0; j < SIZE; j++) {
+        System.out.print(String.format("%3d", bingo[i][j]));
+      }
+      System.out.println();
+    }
   }
-  
   
   public static void main(String[] args) {
 
 //    method1(); // UUID 파일이름 만들기 
-    
 //    Map<String, Object> map = method2("140101-3123456");
-//    for(Entry<String, Object> entry : map.entrySet()) {
+//    // map 을 for 문으로 돌려서 확인하기
+//    for (Entry<String, Object> entry : map.entrySet()) {
 //      System.out.println(entry.getKey() + ": " + entry.getValue());
 //    }
-//    // map 을 for 문으로 돌려서 확인하기 
-
 //    method3(); // 수도 퀴즈  
 //    method4(); // 랜덤하게 통장 출금하기     
 //    method5(); // 윷놀이
 //    method6(); // 인증 코드 만들기 
 //    method7(); // UpDown 게임
 //    method8(); // 빈도수 그래프 그리기 
-//    method9(); // 빙고 섞기
+    method9(); // 빙고 섞기
 
   }
 
