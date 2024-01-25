@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class Class03_HttpURLConnection {
 
@@ -59,16 +62,44 @@ public class Class03_HttpURLConnection {
        * 2. POST : 본문(BODY)을 이용한 요청 
        */
       
-      String requestMethod = con.getRequestMethod();
-      System.out.println(requestMethod);
+      String requestMethod = con.getRequestMethod(); 
+      System.out.println(requestMethod); 
       
-    } catch (MalformedURLException e) {
-      e.printStackTrace();
-    } catch (IOException e) {
-      e.printStackTrace();
-    } finally {
+      /*
+       * 요청 헤더
+       * 1. 요청 정보가 저장된다.
+       * 2. 종류
+       *    1) User-Agent     : 무엇으로 접속하였는지에 관한 정보 ex) 크롬인지, 엣지인지, 자바인지, 사파리인지...
+       *    2) Referer        : 이전 접속 주소 정보 (돌아가기 위해)
+       *    3) Content-Type   : 컨텐트 타입
+       *    4) Content-Length : 컨텐트 크기
+       */
+      
+       //String userAgent = con.getRequestProperty(requestMethod);
+      
+       String userAgent = con.getRequestProperty("user-Agent");
+       System.out.println(userAgent);
+       String referer = con.getRequestProperty("Referer");
+       System.out.println(referer);
+      
+//      Map<String, List<String>> requestHeader = con.getRequestProperties();
+//      
+//      // key - value 하나로 -> Entry ---> 컬렉션 프레임워크 복습하기 
+//      for(Entry<String, List<String>> entry : requestHeader.entrySet()) {
+//        System.out.println(entry.getKey() + " : " + entry.getValue());
+//      }
+      
+     } catch (MalformedURLException e) {
+       e.printStackTrace();
+     } catch (IOException e) {
+       e.printStackTrace();
+     } finally {
 
-    }
+       if (con != null) {
+         // 커넥션 초기화
+         con.disconnect(); // 접속 해제
+       }
+     }
 
-  }
-}
+   }
+ }
