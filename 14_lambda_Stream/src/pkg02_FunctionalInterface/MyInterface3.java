@@ -3,5 +3,5 @@ package pkg02_FunctionalInterface;
 
 @FunctionalInterface
 public interface MyInterface3 {
-  void method(String name);
+  void method(String name); // 파라미터가 있다. String name 
 }

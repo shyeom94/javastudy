@@ -40,7 +40,6 @@ public class MainClass {
 //    method2(supplier);
     
     //method2(() -> "Hello Lambda"); // 코드 생략한 것을 알아볼 수 있도록 하자.
-    
 
     method3(() -> (int) (Math.random() * 10 + 1));
 

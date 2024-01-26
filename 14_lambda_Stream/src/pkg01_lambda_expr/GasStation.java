@@ -2,8 +2,8 @@ package pkg01_lambda_expr;
 
 /*
  * Lambda Expression
- * 1. Anonymous Inner Type 객체를 생성할 때 사용할 수 있는 새로운 표현식이다.
- * 2. 추상 메소드가 1개인 인터페이스(함수형 인터페이스)에서 사용할 수 있다. // 제한적인 경우에서 사용 가능 (함수 = 메소드) 
+ * 1. Anonymous Inner Type 객체를 생성할 때 사용할 수 있는 새로운 표현식이다. 
+ * 2. 추상 메소드가 "1개"인 인터페이스 (함수형 인터페이스) 에서 사용할 수 있다. // 제한적인 경우에만 사용 가능 (함수 = 메소드) 
  * 3. Interface A { void method(int number); }
  *    1) Anonymous Inner Type
  *      A a = new A() {
