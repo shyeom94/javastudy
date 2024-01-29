@@ -16,6 +16,7 @@ public class MainClass {
    *    PreparedStatement ps = con.prepareStatement(쿼리문);
    */
 
+  // DML 구조 기본 
   public static void method1() {
     
     // Connection, PreparedStatement 객체 선언
@@ -60,12 +61,11 @@ public class MainClass {
       } catch (Exception e) {
         e.printStackTrace();
       }
-
     }
 
   }
 
-  // 변수 처리 
+  // DML 변수화하여 입력 처리 
   public static void method2() {
     
     Connection con = null;
@@ -124,11 +124,105 @@ public class MainClass {
 
   }
 
+  // UPDATE
+  public static void method3() {
+    
+    Connection con = null;
+    PreparedStatement ps = null;
+    
+    try {
+
+      Class.forName("oracle.jdbc.OracleDriver");
+      
+      String url = System.getProperty("jdbc.url");
+      String user = System.getProperty("jdbc.user");
+      String password = System.getProperty("jdbc.password");
+      con = DriverManager.getConnection(url, user, password);
+      
+      String sql = "UPDATE SAMPLE_T SET SAMPLE_EDITOR = SAMPLE_EDITOR || 2, SAMPLE_DT = CURRENT_DATE WHERE SAMPLE_NO = ?"; 
+      // 수정한날짜를 변수처리 (물음표 ? 변수 처리) 
+      
+      ps = con.prepareStatement(sql);
+      
+      // 수정할 SAMPLE_NO 입력
+      Scanner sc = new Scanner(System.in);
+      System.out.println("수정할 SAMPLE_NO 입력하세요 >>> ");
+      
+      int sampleNo = sc.nextInt();
+      sc.close();
+      
+      // 입력값을 쿼리로 전달
+      ps.setInt(1, sampleNo); // 쿼리문의 1번째 물음표에 sampleNo 전달하기
+      
+      int result = ps.executeUpdate(); // 반환값 
+      System.out.println(result + " 행 이(가) 수정되었습니다.");
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    } finally {
+      try {
+        if (ps != null)
+          ps.close();
+        if (con != null)
+          con.close();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    }
+  }
+
+  // DELETE - PK 기준으로 삭제 
+  public static void method4() {
+  
+    Connection con = null;
+    PreparedStatement ps = null;
+    
+    try {
+      
+      Class.forName("oracle.jdbc.OracleDriver");
+      
+      String url = System.getProperty("jdbc.url");
+      String user = System.getProperty("jdbc.user");
+      String password = System.getProperty("jdbc.password");
+      con = DriverManager.getConnection(url, user, password);
+      
+      String sql = "DELETE FROM SAMPLE_T WHERE SAMPLE_NO = ?";
+      
+      ps = con.prepareStatement(sql);
+      
+      Scanner sc = new Scanner(System.in);
+      System.out.println("삭제할 SAMPLE_NO 입력하세요 >>> ");
+      int sampleNo = sc.nextInt();
+      sc.close();
+      
+      ps.setInt(1, sampleNo);
+
+      int result = ps.executeUpdate();
+      System.out.println(result + " 행 이(가) 삭제되었습니다.");
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    } finally {
+      try {
+
+        if (ps != null)
+          ps.close();
+        if (con != null)
+          con.close();
+
+      } catch (Exception e) {
+        e.printStackTrace();
+
+      }
+    }
+  }
+
   public static void main(String[] args) {
     
     //method1(); 
-    method2(); 
-    
+    //method2(); // 공부하기 반복해서 구조 파악하기 
+    //method3();
+    method4();
   }
 
 }
