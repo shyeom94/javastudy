@@ -3,7 +3,7 @@ package pkg02_FunctionalInterface;
 
 @FunctionalInterface
 public interface MyInterface1 {
-  void method(); // 반환값이 없다. void 
+  void method(); // void 반환값이 없다. 파라미터가 없다. 
   // void method2(); -> 메소드가 2개 있으면 오류 발생
 }
 

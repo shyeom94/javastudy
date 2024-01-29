@@ -59,6 +59,7 @@ public class GasStation {
 
   // method
   public void sellOil(String model, int oil) {
+    
     // Car car 객체 생성(Anonymous Inner Type) 익명 객체 생성
     /*
     Car car = new Car() {

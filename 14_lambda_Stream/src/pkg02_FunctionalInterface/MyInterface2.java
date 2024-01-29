@@ -3,5 +3,5 @@ package pkg02_FunctionalInterface;
 
 @FunctionalInterface
 public interface MyInterface2 {
-  String method(); // 반환값이 있다. 
+  String method(); // String 반환값이 있다. 
 }

@@ -49,7 +49,7 @@ public class MainClass {
     
     List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-    list.stream()    // 스트림으로 만드는 이유는 map의 여러가지 값을 리스트로 바꿀 수 있으므로
+    list.stream()    // 스트림으로 만드는 이유는 map 의 여러가지 값을 리스트로 바꿀 수 있으므로
       .map((number) -> number + 1)
       .forEach((number) -> System.out.println(number));
   }
