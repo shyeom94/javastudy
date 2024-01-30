@@ -16,7 +16,7 @@ public class MainClass {
    *    PreparedStatement ps = con.prepareStatement(쿼리문);
    */
 
-  // DML 구조 기본 
+  // DML INSERT 구조 기본 
   public static void method1() {
     
     // Connection, PreparedStatement 객체 선언
@@ -65,11 +65,11 @@ public class MainClass {
 
   }
 
-  // DML 변수화하여 입력 처리 
+  // DML INSERT 변수화하여 입력 처리 
   public static void method2() {
     
+    // Connection, PreparedStatement 객체 선언
     Connection con = null;
-    
     PreparedStatement ps = null;
     
     try {
@@ -124,7 +124,7 @@ public class MainClass {
 
   }
 
-  // UPDATE
+  // DML UPDATE
   public static void method3() {
     
     Connection con = null;
@@ -171,7 +171,7 @@ public class MainClass {
     }
   }
 
-  // DELETE - PK 기준으로 삭제 
+  // DML DELETE - PK 기준으로 삭제 
   public static void method4() {
   
     Connection con = null;
