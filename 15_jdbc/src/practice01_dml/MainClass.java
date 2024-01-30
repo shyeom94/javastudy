@@ -11,7 +11,7 @@ public class MainClass {
    * TALK 구조
    *    TALK_NO       NUMBER  (PK)
    *    TALK_CONTENT  VARCHAR2(1000 BYTE)
-   *    TALK_USER   VARCHAR2(1000 BYTE)
+   *    TALK_USER     VARCHAR2(1000 BYTE)
    *    WRITEN_AT     TIMESTAMP (* 현재 날짜/시간 : CURRENT_TIMESTAMP) 
    *    
    * DB 서버 환경
@@ -43,7 +43,7 @@ public class MainClass {
       con = DriverManager.getConnection(url, user, password);
 
       // 쿼리문
-      String sql = "INSERT INTO TALK_T(TALK_NO, TALK_CONTENT, TALK_USER, WRITEN_AT) VALUES(TALK_SEQ.NEXTVAL, '안녕하세요', '염상훈', CURRENT_TIMESTAMP)";
+      String sql = "INSERT INTO TALK_T(TALK_NO, TALK_CONTENT, TALK_USER, WRITTEN_AT) VALUES(TALK_SEQ.NEXTVAL, '안녕하세요', '염상훈', CURRENT_TIMESTAMP)";
       // 쿼리문 안쪽 마지막 부분 세미콜론 붙이지 말 것! (문자열 안쪽 세미콜론 붙이지 말 것)
 
       // PreparedStatement 객체 생성
