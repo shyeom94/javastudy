@@ -1,5 +1,6 @@
 package pkg02_dml;
-
+//[DML] INSERT, UPDATE, DELETE - JAVA 에서는 Return 값 (반환값)이 존재한다. 몇 개 되었는지 값 리턴. 0이면 실패, 1이면 성공 
+//JDBC - AUTO COMMIT 기본적으로 오토 커밋 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;

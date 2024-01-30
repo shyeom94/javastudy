@@ -47,7 +47,7 @@ public class UserDao { // 데이터베이스
 
     try {
 
-      Class.forName("oracle.jdbc.Oracle.Driver");
+      Class.forName("oracle.jdbc.OracleDriver");
       String url = System.getProperty("jdbc.url");
       String user = System.getProperty("jdbc.user");
       String password = System.getProperty("jdbc.password");
@@ -85,7 +85,7 @@ public class UserDao { // 데이터베이스
 
       connection();
 
-      String sql = "SELECT USER_NO, USER_NAME, USER_TEL, JOIN-DT FROM USER_T ORDER BY USER_NO DESC";
+      String sql = "SELECT USER_NO, USER_NAME, USER_TEL, JOIN_DT FROM USER_T ORDER BY USER_NO DESC";
       
       ps = con.prepareStatement(sql);
 
@@ -117,7 +117,7 @@ public class UserDao { // 데이터베이스
 
       connection();
 
-      String sql = "SELECT USER_NO, USER_NAME, USER_TEL, JOIN-DT FROM USER_T WHERE USER_NO = ?";
+      String sql = "SELECT USER_NO, USER_NAME, USER_TEL, JOIN_DT FROM USER_T WHERE USER_NO = ?";
 
       ps = con.prepareStatement(sql);
 
@@ -142,36 +142,80 @@ public class UserDao { // 데이터베이스
   }
   
   // 사용자 등록 : insertUser, saveUser, registerUser 등 
-  
-  
+  public int saveUser(UserDto userDto) {
+    
+    int result = 0;
+    
+    try {
+      
+      connection();
+      
+      String sql = "INSERT INTO USER_T(USER_NO, USER_NAME, USER_TEL, JOIN_DT) VALUES(USER_SEQ.NEXTVAL, ?, ?, TO_CHAR(CURRENT_DATE,'YYYY-MM-DD'))";
+     
+      ps = con.prepareStatement(sql);
+      
+      ps.setString(1, userDto.getUser_name());
+      ps.setString(2, userDto.getUser_tel());
+      result = ps.executeUpdate();
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    } finally {
+      close();
+    }
+    return result;
+  }
   
   // 사용자 수정 : updateUser, moidfyUser 등
-  
-  
-  
-  // 사용자 삭제 : deleteUser, removeUser 등 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  // [DML] INSERT, UPDATE, DELETE - JAVA 에서는 Return 값 (반환값)이 존재한다. 몇 개 되었는지 값 리턴. 0이면 실패, 1이면 성공 
-  // JDBC - AUTO COMMIT 기본적으로 오토 커밋 
-  // [DQL] SELECT
-  
-  
+  public int modifyUser(UserDto userDto) {
 
+    int result = 0;
+
+    try {
+
+      connection();
+      
+      String sql = "UPDATE USER_T"
+                + "    SET USER_NAME = ?, USER_TEL = ?"
+                + "  WHERE USER_NO = ?";
+      
+      ps = con.prepareStatement(sql);
+      
+      ps.setString(1, userDto.getUser_name());
+      ps.setString(2, userDto.getUser_tel());
+      ps.setInt(3, userDto.getUser_no());
+      
+      result = ps.executeUpdate();
+    
+    } catch (Exception e) {
+      e.printStackTrace();
+    } finally {
+      close();
+    }
+    return result;
+  }
+  
+  // 사용자 삭제 : deleteUser, removeUser 등
+  public int removeUser(int user_no) {
+
+    int result = 0;
+
+    try {
+      
+      connection();
+      
+      String sql = "DELETE FROM USER_T WHERE USER_NO = ?";
+      
+      ps = con.prepareStatement(sql);
+      ps.setInt(1, user_no);
+      
+      result = ps.executeUpdate();
+      
+    } catch (Exception e) {
+      e.printStackTrace();
+    } finally {
+      close();
+    }
+    return result;
+  }
 }

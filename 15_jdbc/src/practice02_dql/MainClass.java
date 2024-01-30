@@ -25,7 +25,7 @@ public class MainClass {
    *    -Djdbc.password=1111
    */
 
-  public static void method1() {
+  public static void method1() { // 테이블에서 조회 
 
     Connection con = null;
     PreparedStatement ps = null;
@@ -45,10 +45,11 @@ public class MainClass {
           + " FROM (SELECT ROW_NUMBER() OVER(ORDER BY TALK_NO DESC) AS RN, TALK_NO, TALK_CONTENT, TALK_USER, WRITTEN_AT"
           + "       FROM TALK_T)"
           + " WHERE RN BETWEEN 11 AND 20";
-      
+//      + " WHERE RN BETWEEN ? AND ?";
+
       ps = con.prepareStatement(sql);
-      
-      // BETWEEN 절 ? AND ? 
+
+//      BETWEEN 절 ? AND ? 
 //      int begin = 0; // 시작 값
 //      int end = 0; // 끝 값
 //      ps.setInt(1, begin);
@@ -91,14 +92,12 @@ public class MainClass {
       } catch (Exception e) {
         e.printStackTrace();
       }
-
     }
-
   }
 
   public static void main(String[] args) {
 
-    method1();
+    method1(); // 테이블에서 조회
 
   }
 }

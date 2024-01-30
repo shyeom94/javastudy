@@ -23,7 +23,7 @@ public class MainClass {
    *    -Djdbc.password=1111
    */
   
-  public static void method1() {
+  public static void method1() { // 테이블에 삽입 
     
     // Connection, PreparedStatement 객체 선언
     Connection con = null;
@@ -72,8 +72,7 @@ public class MainClass {
  
   public static void main(String[] args) {
     
-    method1();
+    method1(); // 삽입 
     
   }
-
 }
