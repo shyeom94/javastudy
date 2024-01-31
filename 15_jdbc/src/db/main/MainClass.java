@@ -18,11 +18,17 @@ public class MainClass {
 //    int result = userDao.saveUser(userDto);
 //    System.out.println(result + "행이 삽입되었습니다.");
    
+    UserService userService = new UserServiceImpl(); 
+    
     // 전체 목록 보기
-//   List<UserDto> users = userDao.getUsers();
-//   for(UserDto user : users) {
-//     System.out.println(user);
-//   }
+    
+   // List<UserDto> users = userDao.getUsers();
+    
+   List<UserDto> users = userService.getUsers(); // Service 적용 후 
+
+   for(UserDto user : users) {
+     System.out.println(user);
+   }
    
     // 특정 사용자 검색
 //   UserDto userDto = userDao.getUser(2);

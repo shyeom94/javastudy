@@ -19,7 +19,7 @@ import db.dto.UserDto;
  */
 
 /*
- * Singleton Pattern
+ * Singleton Pattern 싱글톤 패턴 
  * 1. 오직 하나의 객체만 만들어서 사용하는 패턴이다.
  * 2. 클래스 내부에서 객체를 미리 만든 뒤, 해당 객체를 가져다 사용할 수 있도록 메소드를 제공한다. 
  * 3. 클래스 외부에서는 객체를 생성할 수 없도록 생성자를 private 처리한다.
