@@ -1,4 +1,4 @@
-package db.main;
+package db.service;
 // 인터페이스 : 작업지시서. 추상메소드. 인터페이스를 구현한다. (상속한다 (X))
 
 import java.util.List;
