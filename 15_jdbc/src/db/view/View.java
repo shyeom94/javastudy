@@ -5,6 +5,6 @@ import db.dto.UserDto;
 
 public interface View {
   
-  UserDto display(); 
+  UserDto display(); // 출력하는 메세지 
   
 }

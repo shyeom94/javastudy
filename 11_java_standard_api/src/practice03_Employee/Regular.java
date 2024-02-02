@@ -8,7 +8,6 @@ public class Regular extends Employee {
   // constructor
   public Regular(int empNo, String name) { // 사번, 이름 받아오는 Regular 클래스
     super(empNo, name);
-    // TODO Auto-generated constructor stub
   }
 
   public Regular(int empNo, String name, int salary) { // 사번, 이름, 연봉 받아오는 Regular 클래스
@@ -17,7 +16,6 @@ public class Regular extends Employee {
   }
 
 //public Regular() { // 디폴트 안만든다
-//
 //}
 
   // method

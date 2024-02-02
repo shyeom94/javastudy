@@ -19,8 +19,8 @@ import db.view.View;
 // UserApp 동작 흐름
 /*
  * [UserApp]                 [UserController]                                           [UserService]                                        [UserDao]
- *    작업 선택        --->                                                            
- *    View 실행 결과   --->                                                                
+ * 작업 선택           --->                                                            
+ * View 실행 결과      --->                                                                
  *                           String requsetHandle(작업 선택, View 실행 결과) {
  *                              작업에 따른 Service 호출(View 실행 결과 전달)     --->      
  *    작업결과메시지   <---     작업결과 메시지 반환
@@ -49,8 +49,7 @@ public class UserApp {
       String choice = JOptionPane.showInputDialog("1. 전체명단\n2. 상세조회\n3. 등록\n4. 편집\n5. 삭제\n0. 종료\n원하는 작업 번호를 입력하세요.");
       
       // 모든 View 들은 타입이 View 이다.
-      
-      View view = null;
+      View view = null; // 개별로 선언하지 않고 한번에 
       
       switch(choice) {
       case "1" : view = new ListView(); break;
@@ -85,7 +84,7 @@ public class UserApp {
     
     // 전체 목록 보기
     
-   // List<UserDto> users = userDao.getUsers();
+//   List<UserDto> users = userDao.getUsers();
     
 //   List<UserDto> users = userService.getUsers(); // Service 적용 후 
 

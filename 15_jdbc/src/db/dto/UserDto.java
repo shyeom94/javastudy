@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
 /*
  * DTO
  * 1. Data Transfer Object 데이터 전송 객체
@@ -14,6 +15,7 @@ import lombok.ToString;
  * java -jar lombok.jar
  * 이클립스에 설치 후 프로젝트에 jar 파일 빌드 패스 지정하기
  */
+
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
