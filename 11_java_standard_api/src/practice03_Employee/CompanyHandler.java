@@ -53,6 +53,7 @@ public class CompanyHandler {
   public void manage() {
 
     System.out.println("===== 사원관리 프로그램 시작 =====");
+    
     while (true) {
 
       try { 
